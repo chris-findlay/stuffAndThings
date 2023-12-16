@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "logPrintCore": {
+      "commandName": "Project",
+      "commandLineArgs": "-f Counter:5:3"
+    }
+  }
+}

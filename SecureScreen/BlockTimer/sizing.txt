@@ -1,0 +1,44 @@
+############################
+# BlockTimer Sizing Config #
+############################
+
+# Comments start with a '#' and are ignored.  Tabs in this file are expected to be 4-spaces wide.
+
+# Entries are in order from shortest time to longest,
+#  and are made up of:
+# Time, LeftEdge, TopEdge, FractionOfScreenWidth, FullHeight, Opacity
+#  where they are:
+# Time:
+#	seconds left - the time at which this line will be in full effect.
+# LeftEdge:
+#	'-':		no change;
+#	any number:	the timer will be at the left edge of the screen.
+# TopEdge:
+#	'-':		no change;
+#	any number:	the timer will be at the top edge of the screen.
+# FractionOfScreenWidth:
+#	how wide to make the window, as a fraction of the screen size (subject to a minimum window size, configured below).
+# FullHeight:
+#	'-':		no change;
+#	any number:	the timer will be the full height of the screen.
+# Opacity:
+#	0.0 .. 1.0; the opacity of the timer window, when not being pointed at by the mouse.
+
+# The actual time remaining will select 2 lines, and the resulting values used will be
+#  the linear interpolation between the row just below and the time remaining next row.
+
+# Read bottom-up to follow the changes as time runs out:
+
+0		0, 0	1, 1		1.0		# FullScreen at 0s left.
+5		0, -	1, -		1.0		# Full width at 5s left.
+10		-, -	0.5, -		1.0		# Still half width at 10s left; fully opaque.
+15		-, -	0.5, -		0.8		# Half the screen width at 15s left; slightly transparent.
+20		-, -	0.25, -		0.7		# Double again by 20s remaining; slightly more opaque.
+30		-, -	0.125, -	0.6		# Double in width from 35s to 30s remaining; slightly more opaque.
+35		-, -	0.0625, -	0.5		# Stay that size till 35s.
+60		-, -	0.0625, -	0.5		# Double in width from 65s to 60s remaining; slightly more opaque.
+65		-, -	0.03125, -	0.4		# 1/32 screen width at 65s or more remaining; very transparent.
+120		-, -	0.03125, -	0.4		#
+
+# The following sets the smallest width the timer window can be:
+Min-Width = 75

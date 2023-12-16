@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA8B7B6C-673A-4318-B627-F220D7892DDE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>logPrint</RootNamespace>
+    <AssemblyName>logPrint</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>logPrint.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\logPrintCore\packages\JetBrains.Annotations.2023.2.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\logPrintCore\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ansi\AnsiConsoleColourExtensions.cs" />
+    <Compile Include="Ansi\BackgroundColourPart.cs" />
+    <Compile Include="Ansi\ClearMode.cs" />
+    <Compile Include="Ansi\ColourPart.cs" />
+    <Compile Include="Ansi\ConsoleColourOutputMode.cs" />
+    <Compile Include="Ansi\ForegroundColourPart.cs" />
+    <Compile Include="Ansi\Part.cs" />
+    <Compile Include="Ansi\PopPart.cs" />
+    <Compile Include="Ansi\PushPart.cs" />
+    <Compile Include="Ansi\ResetPart.cs" />
+    <Compile Include="Ansi\TextPart.cs" />
+    <Compile Include="Config\Flags\Evaluator\Field.cs" />
+    <Compile Include="Config\Flags\Evaluator\Define.cs" />
+    <Compile Include="Config\Flags\Evaluator\Method.cs" />
+    <Compile Include="Config\Flags\Evaluator\Property.cs" />
+    <Compile Include="Config\Flags\Evaluator\Value.cs" />
+    <Compile Include="Config\Flags\TimeDeltaMode.cs" />
+    <Compile Include="Config\NamedElement.cs" />
+    <Compile Include="Config\Rules\ParseType.cs" />
+    <Compile Include="Config\TypedElement.cs" />
+    <Compile Include="Config\GenericCollection.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="LogLevelPrecedence.cs" />
+    <Compile Include="StepMode.cs" />
+    <Compile Include="Utils\CollectionExtensions.cs" />
+    <Compile Include="Utils\DateTimeExtensions.cs" />
+    <Compile Include="Utils\DebugExtensions.cs" />
+    <Compile Include="Utils\DictionaryExtensions.cs" />
+    <Compile Include="Config\Flags\Evaluator\Eval.cs" />
+    <Compile Include="Config\Flags\Flag.cs" />
+    <Compile Include="Config\Flags\Evaluator\EvalCollection.cs" />
+    <Compile Include="Config\Flags\FlagSet.cs" />
+    <Compile Include="Config\Flags\FlagState.cs" />
+    <Compile Include="Config\Flags\Evaluator\IEvaluator.cs" />
+    <Compile Include="Config\Flags\ReferenceEqualityComparer.cs" />
+    <Compile Include="Utils\OrderedDictionary.cs" />
+    <Compile Include="Utils\SafeDictionary.cs" />
+    <Compile Include="Config\Flags\StateChangeCallback.cs" />
+    <Compile Include="Config\Flags\TimeMarker.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ConsoleReader.cs" />
+    <Compile Include="Config\LogPrintConfigSection.cs" />
+    <Compile Include="ILineReader.cs" />
+    <Compile Include="FileReader.cs" />
+    <Compile Include="Config\Rules\Rule.cs" />
+    <Compile Include="Config\Rules\RuleSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Config\Var.cs" />
+    <Compile Include="Utils\StringExtensions.cs" />
+    <Compile Include="Config\UsageElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="logPrint.sln.DotSettings" />
+    <None Include="packages.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="config.png" />
+    <Content Include="docs.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

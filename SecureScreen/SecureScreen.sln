@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureScreen", "SecureScreen.csproj", "{08470705-3949-4D73-A541-5D9EBD4B4C96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82E441CB-45BF-420E-AA31-47287A7DF11A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08470705-3949-4D73-A541-5D9EBD4B4C96}.Debug|x64.ActiveCfg = Debug|x64
+		{08470705-3949-4D73-A541-5D9EBD4B4C96}.Debug|x64.Build.0 = Debug|x64
+		{08470705-3949-4D73-A541-5D9EBD4B4C96}.Release|x64.ActiveCfg = Release|x64
+		{08470705-3949-4D73-A541-5D9EBD4B4C96}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C902E5AA-B85F-4456-BDDD-CBFC45D54551}
+	EndGlobalSection
+EndGlobal

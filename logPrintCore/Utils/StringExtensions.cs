@@ -65,9 +65,9 @@ internal static class StringExtensions
 		return str?.Trim(chars).NullIfEmpty();
 	}
 
-	public static bool FuzzyContains(this string str, string substr, StringComparison stringComparison)
+	public static bool FuzzyContains(this string? str, string substr, StringComparison stringComparison)
 	{
-		return (str.IndexOf(substr, stringComparison) != -1);
+		return !(str == null || str.IndexOf(substr, stringComparison) == -1);
 	}
 
 	/// <summary>Like <see cref="string.Concat(IEnumerable{string})"/> except that if any part is null, the entire result is null.</summary>
